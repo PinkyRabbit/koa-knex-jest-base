@@ -1,0 +1,58 @@
+{
+  "name": "test-jest-koa-mysql-knex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "node_modules/.bin/eslint ./app/**/*.js",
+    "migrate": "knex --knexfile knex/knexfile.js migrate:latest",
+    "knex": "yarn migrate",
+    "migration:make": "knex --knexfile knex/knexfile.js migrate:make",
+    "migration:rollback": "knex --knexfile knex/knexfile.js migrate:rollback",
+    "test": "NODE_ENV=test jest test/**/*.test.js"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "ignore": [],
+    "linters": {
+      "./app/**/*.js": "eslint"
+    },
+    "relative": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PinkyRabbit/koa-jest-base.git"
+  },
+  "keywords": [],
+  "author": "Mikita Melnikau <usesa@yandex.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PinkyRabbit/koa-jest-base/issues"
+  },
+  "homepage": "https://github.com/PinkyRabbit/koa-jest-base#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "dotenv": "^8.0.0",
+    "knex": "^0.18.0",
+    "mysql": "^2.17.1",
+    "objection": "^1.6.9",
+    "objection-password": "^2.0.0",
+    "objection-timestamps": "^3.0.2",
+    "objection-visibility": "^0.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.18.0",
+    "husky": "^2.7.0",
+    "jest": "^24.8.0",
+    "lint-staged": "^8.2.1"
+  }
+}
