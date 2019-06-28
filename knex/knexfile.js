@@ -1,4 +1,8 @@
-require('dotenv').config({ path: '../.env' });
+const options = /knex/i.test(process.env.npm_lifecycle_script)
+  ? { path: '../.env' }
+  : undefined;
+
+require('dotenv').config(options);
 
 const connection = {
   database: process.env.NODE_ENV !== 'test' ? process.env.DB : 'ifadtest',

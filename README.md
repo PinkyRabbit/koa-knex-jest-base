@@ -6,4 +6,4 @@
 * Objection
 * Jest
 
-Create a copy of `.env.example` -> `.env`. Don't forget to change *your database*
+Create a copy of `.env.example` -> `.env`. Don't forget to change *your database*. Next install migrations with `yarn knex`.
