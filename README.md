@@ -6,4 +6,6 @@
 * Objection
 * Jest
 
-Create a copy of `.env.example` -> `.env`. Don't forget to change *your database*. Next install migrations with `yarn knex`.
+## NodeJS version > 10++
+
+Create a copy of `.env.example` -> `.env`. Don't forget to change *your database*. Next install migrations with `yarn knex`. Also added nodemailer config, that setted for **mail.ru**.
