@@ -10,15 +10,15 @@ const liftUp = async () => {
   await knex.connect();
   logger.info('Connection has been established successfully.');
   await app.listen(PORT);
-  logger.info('The app has been started on ${PORT} port.');
-}
+  logger.fatal(`The app has been started on ${PORT} port.`);
+};
 
 const letDown = async () => {
   await knex.disconnect();
   await app.callback();
 };
 
-if (!isTest) {
+if (process.env.NODE_ENV !== 'test') {
   try {
     liftUp();
   } catch (error) {
