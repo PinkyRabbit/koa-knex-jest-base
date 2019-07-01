@@ -2,12 +2,10 @@ const db = require('../app/db');
 
 describe('Database:knex', () => {
   beforeAll(async () => {
-    await db.connect();
+    await db.init();
   });
 
-  test('fake test', () => {
-
-  });
+  test('fake test', () => {});
 
   afterAll(async () => {
     await db.disconnect();

@@ -19,7 +19,7 @@ exports.up = knex => knex.schema.createTable('users', (table) => {
       id: 1,
       email: process.env.SUPER_ADMIN_EMAIL,
       password: hash,
-      role: 'admin',
+      role: 'super_admin',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     };

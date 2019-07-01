@@ -1,16 +1,10 @@
 const Koa = require('koa');
-const Router = require('koa-router');
+
+const api = require('./routes');
 
 const app = new Koa();
-const router = new Router();
 
-router.get('/', async (ctx) => {
-  ctx.body = {
-    data: 'Sending some JSON',
-  };
-});
-app.use(router.routes());
-
+app.use(api());
 app.use((ctx) => {
   ctx.status = 404;
 });
