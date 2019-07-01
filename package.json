@@ -48,6 +48,7 @@
     "knex": "^0.18.0",
     "knex-cleaner": "^1.1.4",
     "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
     "koa-compose": "^4.1.0",
     "koa-router": "^7.4.0",
     "log4js": "^4.4.0",
