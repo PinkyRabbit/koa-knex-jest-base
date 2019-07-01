@@ -1,4 +1,4 @@
-const supertest = require('supertest');
+const supertest = require('supertest-koa-agent');
 
 const { app, liftUp, letDown } = require('../index');
 

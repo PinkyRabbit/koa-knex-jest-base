@@ -690,6 +690,11 @@ bignumber.js@7.2.1:
   resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-7.2.1.tgz#80c048759d826800807c4bfd521e50edbba57a5f"
   integrity sha512-S4XzBk5sMB+Rcb/LNcpzXr57VRTxgAvaAEDAl1AwRx27j00hT84O6OkteE7u8UB3NuaaygCRrEpqox4uDOrbdQ==
 
+bluebird@^2.9.13:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-2.11.0.tgz#534b9033c022c9579c56ba3b3e5a5caafbb650e1"
+  integrity sha1-U0uQM8AiyVecVro7Plpcqvu2UOE=
+
 bluebird@^3.5.3, bluebird@^3.5.5:
   version "3.5.5"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.5.tgz#a8d0afd73251effbbd5fe384a77d73003c17a71f"
@@ -2961,6 +2966,14 @@ kleur@^3.0.2:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
 
+knex-cleaner@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/knex-cleaner/-/knex-cleaner-1.1.4.tgz#588b18c6cd20815216fa2c8f598800d2face7d90"
+  integrity sha512-lIljy2bnhfKsET5R0XOlItarC7IgvjcU9BxLR3fhRwrFt02NAVPszx8RUVVCNuhyBR5ibzNNwznLR82O/4eC5Q==
+  dependencies:
+    bluebird "^2.9.13"
+    lodash "^3.5.0"
+
 knex@^0.18.0:
   version "0.18.0"
   resolved "https://registry.yarnpkg.com/knex/-/knex-0.18.0.tgz#10ff3c719badfeaeabb5db806c9a63da7f4ef2fd"
@@ -3209,6 +3222,11 @@ lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
+
+lodash@^3.5.0:
+  version "3.10.1"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
+  integrity sha1-W/Rejkm6QYnhfUgnid/RW9FAt7Y=
 
 lodash@^4.17.11:
   version "4.17.11"
@@ -4834,10 +4852,17 @@ superagent@^3.8.3:
     qs "^6.5.1"
     readable-stream "^2.3.5"
 
-supertest@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/supertest/-/supertest-4.0.2.tgz#c2234dbdd6dc79b6f15b99c8d6577b90e4ce3f36"
-  integrity sha512-1BAbvrOZsGA3YTCWqbmh14L0YEq0EGICX/nBnfkfVJn7SrxQV1I3pMYjSzG9y/7ZU2V9dWqyqk2POwxlb09duQ==
+supertest-koa-agent@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/supertest-koa-agent/-/supertest-koa-agent-0.3.2.tgz#d4635ccf94fb5e86e944c6662af505199b38c3a3"
+  integrity sha512-CyqD7B67+EP1Zy+GsM96uKM3wrAnyHPMfv79f72knYP3//dPLuC9+6myuKlmpinH2gaX+yXeUnD/+Hhqpov8rw==
+  dependencies:
+    supertest "^3.4.2"
+
+supertest@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/supertest/-/supertest-3.4.2.tgz#bad7de2e43d60d27c8caeb8ab34a67c8a5f71aad"
+  integrity sha512-WZWbwceHUo2P36RoEIdXvmqfs47idNNZjCuJOqDz6rvtkk8ym56aU5oglORCpPeXGxT7l9rkJ41+O1lffQXYSA==
   dependencies:
     methods "^1.1.2"
     superagent "^3.8.3"

@@ -1,4 +1,5 @@
 const Knex = require('knex');
+const knexCleaner = require('knex-cleaner');
 const { Model } = require('objection');
 
 const knexConfig = require('../../knex/knexfile');
@@ -23,4 +24,10 @@ const disconnect = async () => {
   await knex.destroy();
 };
 
-module.exports = { connect, disconnect };
+const clean = async () => {
+  if (process.env.NODE_ENV !== 'production') {
+    await knexCleaner.clean(knex);
+  }
+};
+
+module.exports = { connect, disconnect, clean };
