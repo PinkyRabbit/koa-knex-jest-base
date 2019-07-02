@@ -7,15 +7,18 @@
     "node": ">=10.15.0"
   },
   "scripts": {
+    "start": "NODE_ENV=production node index.js",
     "lint": "node_modules/.bin/eslint ./app/**/*.js",
     "migrate": "knex --knexfile knex/knexfile.js migrate:latest",
     "knex": "yarn migrate",
     "migration:make": "knex --knexfile knex/knexfile.js migrate:make",
     "migration:rollback": "knex --knexfile knex/knexfile.js migrate:rollback",
-    "test": "NODE_ENV=test jest test/**/*.test.js"
+    "test": "NODE_ENV=test jest test/routes"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testRegex": "./test/.*.test.js$",
+    "rootDir": "."
   },
   "husky": {
     "hooks": {
@@ -45,18 +48,22 @@
     "bcrypt": "^3.0.6",
     "bluebird": "^3.5.5",
     "dotenv": "^8.0.0",
+    "jsonwebtoken": "^8.5.1",
     "knex": "^0.18.0",
     "knex-cleaner": "^1.1.4",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-compose": "^4.1.0",
+    "koa-passport": "^4.1.3",
     "koa-router": "^7.4.0",
+    "koa-session": "^5.12.0",
     "log4js": "^4.4.0",
     "mysql": "^2.17.1",
     "objection": "^1.6.9",
     "objection-password": "^2.0.0",
     "objection-timestamps": "^3.0.2",
-    "objection-visibility": "^0.4.0"
+    "objection-visibility": "^0.4.0",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^6.0.1",

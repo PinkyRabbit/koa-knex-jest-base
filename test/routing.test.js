@@ -16,4 +16,5 @@ describe('API: Auth', () => {
 
     expect(response.body).toEqual({ data: "OK" });
   });
+  
 });

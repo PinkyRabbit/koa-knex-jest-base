@@ -8,6 +8,16 @@ const create = async (body) => {
   return user;
 };
 
+const getUserForSession = async (where = {}) => {
+  const user = await User
+    .query()
+    .findOne(where)
+    .whereNull('deletedAt');
+
+  return user;
+};
+
 module.exports = {
   create,
+  getUserForSession,
 };
