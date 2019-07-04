@@ -19,7 +19,7 @@ class ErrorService {
         await next();
       } catch (error) {
         const status = error.statusCode || error.status || 500;
-        console.error(status, error.message, error);
+        logger.info(status, error.message, error);
 
         if (status === 500) {
           logger.fatal(error);

@@ -5,7 +5,7 @@ const app = require('../../index');
 
 const fakeUsers = require('../mocks/users');
 
-describe('API: Auth', () => {
+const authTests = () => describe('API: Auth', () => {
   beforeEach(async () => {
     await db.clean();
   });
@@ -13,7 +13,7 @@ describe('API: Auth', () => {
   afterEach(async () => {
     await db.disconnect();
   });
-  /*
+
   it('Should be able to register a new user', async () => {
     const fakeUser = fakeUsers[0];
     const response = await supertest(app)
@@ -64,8 +64,8 @@ describe('API: Auth', () => {
     expect(response.body).toHaveProperty('id');
     expect(response.body).not.toHaveProperty('password');
   });
-  */
 
+  /*
   it('Should return user if request is authenticated with token', async () => {
     const fakeUser = fakeUsers[0];
     await supertest(app)
@@ -82,10 +82,12 @@ describe('API: Auth', () => {
     const response = await supertest(app)
       .get('/api/auth/is-authenticated')
       .set('Authorization', `Bearer ${token}`)
-      // .set('Authorization', token)
       .expect(200);
 
-    // expect(response.body).toHaveProperty('id');
-    // expect(response.body).not.toHaveProperty('password');
+    expect(response.body).toHaveProperty('id');
+    expect(response.body).not.toHaveProperty('password');
   });
+  */
 });
+
+module.exports = authTests;

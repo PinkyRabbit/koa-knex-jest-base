@@ -1,6 +1,6 @@
 const db = require('../app/db');
 
-describe('Database:knex', () => {
+const dbTest = () => describe('Database:knex', () => {
   beforeAll(async () => {
     await db.init();
   });
@@ -11,3 +11,5 @@ describe('Database:knex', () => {
     await db.disconnect();
   });
 });
+
+module.exports = dbTest;

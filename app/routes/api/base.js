@@ -1,9 +1,9 @@
-// const { isAuthenticated } = require('../../../auth');
+const { isAuthenticated } = require('../../lib/auth');
 
 module.exports = (router) => {
   router
-    .get('/good', getNormal);
-    // .get('/', isAuthenticated(), getProtected);
+    .get('/good', getNormal)
+    .get('/protected', isAuthenticated(), getProtected);
 };
 
 const getNormal = async (ctx) => {

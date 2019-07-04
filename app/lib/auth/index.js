@@ -56,7 +56,6 @@ const generateToken = async (ctx) => {
 };
 
 const isAuthenticated = () => async (ctx, next) => {
-  console.log(`ctx.isAuthenticated() = ${ctx.isAuthenticated()}`);
   if (!ctx.isAuthenticated()) {
     ErrorService.throw(401, 'Failed to authenticate');
   }

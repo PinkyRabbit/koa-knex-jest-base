@@ -13,11 +13,12 @@
     "knex": "yarn migrate",
     "migration:make": "knex --knexfile knex/knexfile.js migrate:make",
     "migration:rollback": "knex --knexfile knex/knexfile.js migrate:rollback",
-    "test": "NODE_ENV=test jest test/routes"
+    "test": "NODE_ENV=test jest --runInBand"
   },
   "jest": {
+    "setupFilesAfterEnv": ["./test/init.js"],
     "testEnvironment": "node",
-    "testRegex": "./test/.*.test.js$",
+    "testRegex": "./tests.js$",
     "rootDir": "."
   },
   "husky": {

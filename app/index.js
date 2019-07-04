@@ -25,14 +25,8 @@ app.use(session({
   renew: false,
 }, app));
 
-/* */
 app.use(auth());
 app.use(passport.session());
-app.use(async (ctx, next) => {
-  console.log(ctx.state);
-  return next();
-});
-/* */
 app.use(api());
 app.use((ctx) => {
   ctx.status = 404;
