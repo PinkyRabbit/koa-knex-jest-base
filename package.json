@@ -46,7 +46,7 @@
   "homepage": "https://github.com/PinkyRabbit/koa-jest-base#readme",
   "dependencies": {
     "@log4js-node/smtp": "^1.1.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "bluebird": "^3.5.5",
     "dotenv": "^8.0.0",
     "jsonwebtoken": "^8.5.1",
